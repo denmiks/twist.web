@@ -45,6 +45,21 @@ img, svg { max-width: 100%; display: block; }
 
 a { color: inherit; }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20380'%20fill='none'%20stroke='%23CE7F16'%20stroke-width='5'%20stroke-linecap='round'%3E%3Cg%20transform='rotate(-18%20210%20210)'%3E%3Cellipse%20cx='210'%20cy='210'%20rx='155'%20ry='130'/%3E%3Cellipse%20cx='206'%20cy='218'%20rx='44'%20ry='58'%20stroke-width='3'/%3E%3C/g%3E%3Cpath%20d='M300%2084%20C335%2060%20368%2066%20380%20100'%20stroke-width='4'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20400'%20fill='none'%20stroke='%235F7A2B'%20stroke-linecap='round'%3E%3Ccircle%20cx='200'%20cy='200'%20r='150'%20stroke-width='8'/%3E%3Ccircle%20cx='200'%20cy='200'%20r='132'%20stroke-width='2'/%3E%3Cg%20stroke-width='3'%3E%3Cpath%20d='M200%20200%20L200%2068'/%3E%3Cpath%20d='M200%20200%20L314.4%20134'/%3E%3Cpath%20d='M200%20200%20L314.4%20266'/%3E%3Cpath%20d='M200%20200%20L200%20332'/%3E%3Cpath%20d='M200%20200%20L85.6%20266'/%3E%3Cpath%20d='M200%20200%20L85.6%20134'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat;
+  background-position: -60px 40px, calc(100% - 40px) calc(100% - 60px);
+  background-size: 360px, 300px;
+}
+
 .wrap {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -556,11 +571,23 @@ section { padding: 74px 0; }
 .review {
   background: var(--white);
   border-top: 5px solid var(--yellow);
-  padding: 28px 26px 24px;
+  padding: 0 26px 24px;
   margin: 0;
   box-shadow: 0 1px 0 var(--line);
   display: flex;
   flex-direction: column;
+}
+
+.review-photo {
+  margin: 0 -26px 22px;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.review-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .review-stars {
@@ -579,24 +606,85 @@ section { padding: 74px 0; }
 }
 
 .review figcaption {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin-top: auto;
   padding-top: 18px;
   border-top: 1px solid var(--line);
 }
 
-.review-avatar {
-  width: 44px; height: 44px;
-  min-width: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: inline-block;
+.review figcaption strong { display: block; font-size: 0.95rem; }
+
+/* ---------------- Shop carousel ---------------- */
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.review figcaption strong { display: block; font-size: 0.95rem; }
-.review figcaption small { color: var(--ink-soft); font-size: 0.82rem; }
+.carousel-track {
+  flex: 1;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  padding: 0 12px;
+}
+
+.carousel-item-inner {
+  background: var(--white);
+  border-top: 5px solid var(--yellow);
+  box-shadow: 0 1px 0 var(--line);
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+a.carousel-item-inner:hover { transform: translateY(-3px); }
+
+.carousel-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-item span {
+  display: block;
+  padding: 14px 18px 16px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--grove-deep);
+}
+
+.carousel-arrow {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--grove-deep);
+  background: transparent;
+  color: var(--grove-deep);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.carousel-arrow:hover { background: var(--grove-deep); color: var(--cream); }
+.carousel-arrow:disabled { opacity: 0.35; pointer-events: none; }
+.carousel-arrow svg { width: 20px; height: 20px; }
+
+.carousel[data-per-view="3"] .carousel-item { flex-basis: calc(100% / 3); }
+.carousel[data-per-view="2"] .carousel-item { flex-basis: 50%; }
+.carousel[data-per-view="1"] .carousel-item { flex-basis: 100%; }
 
 /* ---------------- Footer ---------------- */
 
