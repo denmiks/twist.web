@@ -127,9 +127,12 @@ p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
 /* ---------------- Header / Nav ---------------- */
 
 .site-header {
-  background: var(--grove-deep);
+  position: sticky;
+  top: 0;
+  background: rgba(42, 54, 24, 0.62);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%);
   color: var(--cream);
-  position: relative;
   z-index: 40;
 }
 
@@ -571,13 +574,17 @@ section { padding: 74px 0; }
 .form-success.show { display: block; }
 
 .info-card {
-  background: var(--white);
+  background: rgba(95, 122, 43, 0.22);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
+  border: 1px solid rgba(251, 243, 227, 0.5);
+  border-top: 5px solid var(--calamansi);
   padding: 32px;
-  border-top: 7px solid var(--calamansi);
+  box-shadow: 0 10px 30px rgba(43, 35, 24, 0.10);
 }
 .info-row {
   padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(43, 35, 24, 0.15);
 }
 .info-row:last-child { border-bottom: none; }
 .info-row .label {
@@ -589,8 +596,8 @@ section { padding: 74px 0; }
 
 .map-embed {
   border: 0;
+  height: 460px;
   width: 100%;
-  height: 300px;
   margin-top: 28px;
   filter: sepia(8%) saturate(90%);
 }
@@ -606,8 +613,11 @@ section { padding: 74px 0; }
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--grove-deep);
-  color: var(--cream);
+  background: rgba(95, 122, 43, 0.28);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  backdrop-filter: blur(10px) saturate(150%);
+  border: 1px solid rgba(251, 243, 227, 0.55);
+  color: var(--grove-deep);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -616,8 +626,8 @@ section { padding: 74px 0; }
 .social-btn svg { width: 24px; height: 24px; }
 .social-btn:hover {
   transform: translateY(-3px);
-  background: var(--mango);
-  color: var(--grove-deep);
+  background: var(--grove-deep);
+  color: var(--cream);
 }
 
 /* ---------------- Reviews ---------------- */
