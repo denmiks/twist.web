@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Twist</title>
+<meta name="description" content="Get in touch with Twist for mango, calamansi, and iced tea concentrate supply pricing and lead times.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo"><img src="assets/twist-logo.jpg" alt="Twist logo" class="logo-mark">Twist</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="hero-eyebrow">Contact</div>
+      <h1>Let's talk about your supply.</h1>
+      <p class="lede">Tell us what you need — fresh fruit, purée, juice, or iced tea concentrate — and roughly how much of it, and we'll get back to you with pricing and lead times.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-grid">
+
+      <div>
+        <div id="form-success" class="form-success">
+          <h3 style="margin-bottom:6px;">Thanks — we've got it.</h3>
+          <p style="margin:0;">Your inquiry is in. Our client accounts team typically replies within one business day with pricing and next steps.</p>
+        </div>
+
+        <form id="inquiry-form">
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="company">Company / restaurant</label>
+              <input type="text" id="company" name="company" required>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="product">Product interest</label>
+              <select id="product" name="product">
+                <option>Fresh Mango</option>
+                <option>Mango Purée (Pouch)</option>
+                <option>Fresh Calamansi</option>
+                <option>Calamansi Juice (Bottle/Pouch)</option>
+                <option>Iced Tea Concentrate</option>
+                <option>More than one / not sure yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="volume">Estimated volume</label>
+              <input type="text" id="volume" name="volume" placeholder="e.g. 200 kg / week">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Anything else we should know?</label>
+            <textarea id="message" name="message" rows="5" placeholder="Delivery area, order frequency, ripeness needs, packaging preferences..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send inquiry</button>
+          <p class="form-note">This form doesn't send automatically on this preview — connect it to your email or CRM before launch, or reach us directly at the details on the right.</p>
+        </form>
+      </div>
+
+      <div>
+        <div class="info-card">
+          <div class="info-row">
+            <div class="label">Distribution hub</div>
+            <div>Twist Distribution Hub<br>Quezon City, Metro Manila, Philippines</div>
+          </div>
+          <div class="info-row">
+            <div class="label">Phone</div>
+            <div><a href="tel:+63290001234">+63 2 9000 1234</a></div>
+          </div>
+          <div class="info-row">
+            <div class="label">Email</div>
+            <div><a href="mailto:hello@drinktwist.ph">hello@drinktwist.ph</a></div>
+          </div>
+          <div class="info-row">
+            <div class="label">Hours</div>
+            <div>Monday–Saturday, 7:00 AM–5:00 PM</div>
+          </div>
+          <div class="info-row">
+            <div class="label">Service area</div>
+            <div>Metro Manila and nearby provinces on standing routes; other areas by arrangement.</div>
+          </div>
+        </div>
+
+        <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Quezon+City,+Metro+Manila,+Philippines&output=embed"
+          title="Map of Quezon City, Metro Manila"></iframe>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/twist-logo.jpg" alt="Twist logo">
+          <span>Twist</span>
+        </div>
+        <p style="max-width: 34ch; opacity: 0.85;">Mango, calamansi, and iced tea concentrate, supplied direct from Philippine orchards to restaurants, hotels, and manufacturers.</p>
+      </div>
+      <div>
+        <h4>SITE</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>REACH US</h4>
+        <ul>
+          <li><a href="mailto:hello@drinktwist.ph">hello@drinktwist.ph</a></li>
+          <li><a href="tel:+63290001234">+63 2 9000 1234</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Twist Co.</span>
+      <span>Quezon City, Metro Manila, Philippines</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
