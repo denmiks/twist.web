@@ -691,24 +691,24 @@ a.carousel-item-inner:hover { transform: translateY(-3px); }
 
 .carousel-item img {
   width: 100%;
-  height: 420px;
+  height: 300px;
   object-fit: cover;
   display: block;
 }
 
 .carousel-item span {
   display: block;
-  padding: 18px 22px 20px;
+  padding: 16px 20px 18px;
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--grove-deep);
 }
 
 .carousel-arrow {
   flex: 0 0 auto;
-  width: 54px;
-  height: 54px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   border: none;
   background: rgba(255, 253, 248, 0.35);
@@ -722,7 +722,7 @@ a.carousel-item-inner:hover { transform: translateY(-3px); }
   transition: background 0.15s ease, color 0.15s ease;
 }
 .carousel-arrow:hover { background: rgba(42, 54, 24, 0.85); color: var(--cream); }
-.carousel-arrow svg { width: 24px; height: 24px; }
+.carousel-arrow svg { width: 21px; height: 21px; }
 
 .carousel[data-per-view="3"] .carousel-item { flex-basis: calc(100% / 3); }
 .carousel[data-per-view="2"] .carousel-item { flex-basis: 50%; }
