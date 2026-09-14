@@ -687,7 +687,7 @@ a.carousel-item-inner:hover { transform: translateY(-3px); }
 .carousel-item img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
 }

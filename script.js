@@ -40,10 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function perView() {
-      var w = window.innerWidth;
-      if (w < 640) return 1;
-      if (w < 920) return 2;
-      return 3;
+      return 1;
     }
 
     function update() {
