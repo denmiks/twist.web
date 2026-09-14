@@ -54,7 +54,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 30;
+  z-index: -1;
   pointer-events: none;
   opacity: 0.5;
   background-image:
@@ -637,20 +637,12 @@ section { padding: 74px 0; }
 }
 
 .review blockquote {
-  margin: 0 0 20px;
+  margin: 0;
   font-family: var(--font-display);
   font-size: 1.05rem;
   line-height: 1.5;
   color: var(--grove-deep);
 }
-
-.review figcaption {
-  margin-top: auto;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-}
-
-.review figcaption strong { display: block; font-size: 0.95rem; }
 
 /* ---------------- Shop carousel ---------------- */
 
