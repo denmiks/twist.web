@@ -41,30 +41,43 @@
           <a href="contact.html" class="btn btn-outline">Talk to our team</a>
         </div>
       </div>
-      <div class="hero-art">
-        <svg viewBox="0 0 480 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a sliced mango and calamansi">
-          <ellipse cx="205" cy="205" rx="185" ry="165" fill="var(--mango)" transform="rotate(-18 205 205)"/>
-          <ellipse cx="205" cy="205" rx="185" ry="165" fill="none" stroke="var(--mango-dark)" stroke-width="4" transform="rotate(-18 205 205)"/>
-          <ellipse cx="195" cy="215" rx="62" ry="82" fill="var(--yellow)" opacity="0.9" transform="rotate(-18 195 215)"/>
-          <ellipse cx="195" cy="215" rx="62" ry="82" fill="none" stroke="var(--mango-dark)" stroke-width="2.5" transform="rotate(-18 195 215)"/>
-
-          <circle cx="345" cy="330" r="115" fill="var(--white)" stroke="var(--calamansi-dark)" stroke-width="4"/>
-          <circle cx="345" cy="330" r="115" fill="none" stroke="var(--calamansi)" stroke-width="14" stroke-dasharray="1 0" opacity="0.25"/>
-          <g stroke="var(--calamansi-dark)" stroke-width="2.5" opacity="0.85">
-            <path d="M345 330 L345 218" fill="none"/>
-            <path d="M345 330 L440 275" fill="none"/>
-            <path d="M345 330 L440 385" fill="none"/>
-            <path d="M345 330 L345 442" fill="none"/>
-            <path d="M345 330 L250 385" fill="none"/>
-            <path d="M345 330 L250 275" fill="none"/>
-          </g>
-          <g fill="var(--calamansi)" opacity="0.55">
-            <path d="M345 330 L345 218 A112 112 0 0 1 440 275 Z"/>
-            <path d="M345 330 L440 385 A112 112 0 0 1 345 442 Z"/>
-            <path d="M345 330 L250 275 A112 112 0 0 1 345 218 Z"/>
-          </g>
-          <circle cx="345" cy="330" r="115" fill="none" stroke="var(--calamansi-dark)" stroke-width="4"/>
-        </svg>
+      <div class="hero-carousel">
+        <div class="carousel" id="productCarousel">
+          <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous products" aria-controls="productCarouselTrack">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="carousel-track" id="productCarouselTrack">
+            <div class="carousel-slides" id="productCarouselSlides">
+              <div class="carousel-item">
+                <a href="#" class="carousel-item-inner">
+                  <img src="PICTURES/twist logo.jpg" alt="Twist store">
+                  <span>Shop Twist</span>
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="#" class="carousel-item-inner">
+                  <img src="PICTURES/MANGO PUREE.jpg" alt="Mango purée">
+                  <span>Mango Purée</span>
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="#" class="carousel-item-inner">
+                  <img src="PICTURES/CALAMANSI.jpg" alt="Calamansi">
+                  <span>Calamansi</span>
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="#" class="carousel-item-inner">
+                  <img src="PICTURES/iced tea.jpg" alt="Iced tea">
+                  <span>Iced Tea</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="carousel-arrow carousel-next" aria-label="Next products" aria-controls="productCarouselTrack">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
