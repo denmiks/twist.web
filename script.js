@@ -22,9 +22,22 @@ document.addEventListener("DOMContentLoaded", function () {
   var carousel = document.getElementById("productCarousel");
   if (carousel) {
     var slides = document.getElementById("productCarouselSlides");
+    var dotsBox = document.getElementById("carouselDots");
     var prev = carousel.querySelector(".carousel-prev");
     var next = carousel.querySelector(".carousel-next");
     var index = 0;
+    var dots = [];
+
+    for (var d = 0; d < slides.children.length; d++) {
+      var dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", "Go to slide " + (d + 1));
+      dot.addEventListener("click", (function (i) {
+        return function () { index = i; update(); play(); };
+      })(d));
+      dotsBox.appendChild(dot);
+      dots.push(dot);
+    }
 
     function perView() {
       var w = window.innerWidth;
@@ -35,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function update() {
       var per = perView();
+      carousel.setAttribute("data-per-view", per);
       var item = slides.querySelector(".carousel-item");
       var step = item ? item.getBoundingClientRect().width : 0;
       var maxIndex = slides.children.length - per;
@@ -43,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
       slides.style.transform = "translateX(-" + index * step + "px)";
       prev.disabled = index === 0;
       next.disabled = index === maxIndex;
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.toggle("active", i === index);
+      }
       return maxIndex;
     }
 
