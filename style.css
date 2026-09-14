@@ -595,6 +595,31 @@ section { padding: 74px 0; }
   filter: sepia(8%) saturate(90%);
 }
 
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.social-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--grove-deep);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.social-btn svg { width: 24px; height: 24px; }
+.social-btn:hover {
+  transform: translateY(-3px);
+  background: var(--mango);
+  color: var(--grove-deep);
+}
+
 /* ---------------- Reviews ---------------- */
 
 .section-reviews { background: var(--cream); border: none; }
