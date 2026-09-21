@@ -614,8 +614,25 @@ section { padding: 74px 0; }
   font-family: var(--font-display);
   font-weight: 600;
   color: var(--grove-deep);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 .faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "";
+  flex: 0 0 9px;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-3px);
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after {
+  transform: rotate(225deg) translate(-2px, -1px);
+}
 .faq-item p {
   padding: 0 22px 20px;
   margin: 0;
@@ -1138,6 +1155,11 @@ a.carousel-item-inner:hover { transform: translateY(-3px); }
 
 .page-hero {
   padding: 58px 0 20px;
+}
+.page-hero .hero-eyebrow {
+  font-style: normal;
+  font-size: 1.42rem;
+  font-weight: 700;
 }
 .page-hero p.lede { margin-top: 14px; }
 
