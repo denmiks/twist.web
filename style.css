@@ -56,37 +56,6 @@ img, svg { max-width: 100%; display: block; }
 
 a { color: inherit; }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.5;
-  background-image:
-    var(--bg-mango), var(--bg-mango), var(--bg-mango), var(--bg-mango),
-    var(--bg-calamansi), var(--bg-calamansi), var(--bg-calamansi), var(--bg-calamansi);
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-position:
-    -40px 40px,
-    calc(100% - 200px) 55%,
-    -50px calc(100% - 210px),
-    10% calc(100% - 30px),
-    calc(100% - 160px) 6%,
-    8% 12%,
-    calc(100% - 100px) calc(100% - 130px),
-    calc(100% - 60px) 38%;
-  background-size:
-    200px,
-    170px,
-    190px,
-    150px,
-    120px,
-    150px,
-    120px,
-    160px;
-}
-
 .wrap {
   max-width: var(--max-width);
   margin: 0 auto;
