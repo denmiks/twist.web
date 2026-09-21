@@ -25,10 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var dotsBox = document.getElementById("carouselDots");
     var prev = carousel.querySelector(".carousel-prev");
     var next = carousel.querySelector(".carousel-next");
-    var index = 0;
     var dots = [];
+    var slideCount = slides.children.length;
+    var index = slideCount - 1;
 
-    for (var d = 0; d < slides.children.length; d++) {
+    slides.appendChild(slides.children[0].cloneNode(true));
+
+    for (var d = 0; d < slideCount; d++) {
       var dot = document.createElement("button");
       dot.type = "button";
       dot.setAttribute("aria-label", "Go to slide " + (d + 1));
@@ -43,29 +46,38 @@ document.addEventListener("DOMContentLoaded", function () {
       return 1;
     }
 
-    function update() {
+    function update(resetTransition) {
       var per = perView();
       carousel.setAttribute("data-per-view", per);
       var item = slides.querySelector(".carousel-slide");
       var step = item ? item.getBoundingClientRect().width : 0;
-      var maxIndex = slides.children.length - per;
+      var maxIndex = slideCount;
       if (index > maxIndex) index = maxIndex;
-      if (index < 0) index = 0;
+      if (index < 0) index = slideCount - 1;
+      if (resetTransition) slides.style.transition = "none";
       slides.style.transform = "translateX(-" + index * step + "px)";
-      prev.disabled = index === 0;
-      next.disabled = index === maxIndex;
+      if (resetTransition) {
+        slides.offsetWidth;
+        slides.style.transition = "";
+      }
       for (var i = 0; i < dots.length; i++) {
-        dots[i].classList.toggle("active", i === index);
+        dots[i].classList.toggle("active", i === index % slideCount);
       }
       return maxIndex;
     }
+
+    slides.addEventListener("transitionend", function () {
+      if (index === slideCount) {
+        index = 0;
+        update(true);
+      }
+    });
 
     var timer;
     function play() {
       stop();
       timer = setInterval(function () {
-        var maxIndex = slides.children.length - perView();
-        index = index >= maxIndex ? 0 : index + 1;
+        index++;
         update();
       }, 4000);
     }
