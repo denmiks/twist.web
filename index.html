@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Twist Puree — Mango, Calamansi &amp; Iced Tea Supply</title>
-<meta name="description" content="Twist supplies fresh mango, mango purée, fresh calamansi, calamansi juice, and iced tea concentrate to restaurants, hotels, and food manufacturers.">
+<meta name="description" content="Twist supplies mango purée, calamansi juice, and concentrated iced tea to restaurants, hotels, and food manufacturers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,8 +20,8 @@
     </button>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="products.html">Products</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -31,90 +31,108 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="wrap">
-      <div>
-        <div class="hero-eyebrow">Mango, calamansi &amp; iced tea, straight from the source</div>
-        <h1>Fruit your kitchen can build a menu around.</h1>
-        <p class="lede">We supply fresh mango, mango purée, fresh calamansi, calamansi juice, and iced tea concentrate to restaurants, hotels, and food manufacturers across the Philippines — picked and brewed to order, delivered on schedule.</p>
-        <div class="hero-actions">
-          <a href="products.html" class="btn btn-primary">View our products</a>
-          <a href="contact.html" class="btn btn-outline">Talk to our team</a>
-        </div>
-      </div>
-      <div class="hero-carousel">
-        <div class="carousel" id="productCarousel">
-          <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous products" aria-controls="productCarouselTrack">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <div class="carousel-track" id="productCarouselTrack">
-            <div class="carousel-slides" id="productCarouselSlides">
-              <div class="carousel-item">
-                <a href="https://s.lazada.com.ph/s.Z7be90?c=y" target="_blank" rel="noopener" class="carousel-item-inner">
-                  <img src="PICTURES/twist logo.jpg" alt="Twist store">
-                  <span class="carousel-caption"><strong>Shop Twist</strong><em>Shop now</em></span>
-                </a>
-              </div>
-              <div class="carousel-item">
-                <a href="https://s.lazada.com.ph/s.Z7beOc?c=w" target="_blank" rel="noopener" class="carousel-item-inner">
-                  <img src="PICTURES/MANGO PUREE.jpg" alt="Mango purée">
-                  <span class="carousel-caption"><strong>Mango Purée</strong><em>Shop now</em></span>
-                </a>
-              </div>
-              <div class="carousel-item">
-                <a href="https://s.lazada.com.ph/s.Z7beP3?c=w" target="_blank" rel="noopener" class="carousel-item-inner">
-                  <img src="PICTURES/CALAMANSI.jpg" alt="Calamansi">
-                  <span class="carousel-caption"><strong>Calamansi</strong><em>Shop now</em></span>
-                </a>
-              </div>
-              <div class="carousel-item">
-                <a href="https://s.lazada.com.ph/s.Z7belZ?c=v" target="_blank" rel="noopener" class="carousel-item-inner">
-                  <img src="PICTURES/iced tea.jpg" alt="Iced tea">
-                  <span class="carousel-caption"><strong>Iced Tea</strong><em>Shop now</em></span>
-                </a>
+    <div class="carousel hero-slider" id="productCarousel" aria-label="Featured Twist products">
+      <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous slide" aria-controls="productCarouselTrack">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+
+      <div class="carousel-track" id="productCarouselTrack">
+        <div class="carousel-slides" id="productCarouselSlides">
+          <article class="carousel-slide hero-slide" style="background-image: linear-gradient(90deg, rgba(24, 30, 18, 0.72) 0%, rgba(24, 30, 18, 0.62) 34%, rgba(24, 30, 18, 0.12) 62%, rgba(24, 30, 18, 0.22) 100%), url('PICTURES/iced tea.jpg');">
+            <div class="hero-slide-content">
+              <div class="hero-eyebrow">Tea brewed to pour</div>
+              <div class="hero-tagline">Where You Can Get it Fresh!</div>
+              <h1>Ready-to-serve iced tea with a clean, reliable finish.</h1>
+              <p class="lede">Our concentrate is built for foodservice consistency — strong, smooth, and easy to scale from lunch rush to a full venue service.</p>
+              <div class="hero-actions">
+                <a href="products.html" class="btn btn-primary">View iced tea</a>
+                <a href="contact.html" class="btn btn-outline btn-light">Book a tasting</a>
               </div>
             </div>
-          </div>
-          <button type="button" class="carousel-arrow carousel-next" aria-label="Next products" aria-controls="productCarouselTrack">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
+            <div class="hero-product-card">
+              <img src="PICTURES/iced tea.jpg" alt="Iced tea concentrate" aria-hidden="true">
+            </div>
+          </article>
+
+          <article class="carousel-slide hero-slide" style="background-image: linear-gradient(90deg, rgba(24, 30, 18, 0.72) 0%, rgba(24, 30, 18, 0.62) 34%, rgba(24, 30, 18, 0.12) 62%, rgba(24, 30, 18, 0.22) 100%), url('PICTURES/MANGO PUREE.jpg');">
+            <div class="hero-slide-content">
+              <div class="hero-eyebrow">Pure fruit performance</div>
+              <div class="hero-tagline">Where You Can Get it Fresh!</div>
+              <h1>Bold mango flavour for shakes, desserts, and drinks.</h1>
+              <p class="lede">Our mango purée is pasteurized and packed for consistent texture, colour, and sweetness across every batch — from cafés to commissaries.</p>
+              <div class="hero-actions">
+                <a href="products.html" class="btn btn-primary">Explore mango purée</a>
+                <a href="contact.html" class="btn btn-outline btn-light">Request a quote</a>
+              </div>
+            </div>
+            <div class="hero-product-card">
+              <img src="PICTURES/MANGO PUREE.jpg" alt="Mango purée" aria-hidden="true">
+            </div>
+          </article>
+
+          <article class="carousel-slide hero-slide" style="background-image: linear-gradient(90deg, rgba(24, 30, 18, 0.72) 0%, rgba(24, 30, 18, 0.62) 34%, rgba(24, 30, 18, 0.12) 62%, rgba(24, 30, 18, 0.22) 100%), url('PICTURES/CALAMANSI.jpg');">
+            <div class="hero-slide-content">
+              <div class="hero-eyebrow">Citrus that cuts through</div>
+              <div class="hero-tagline">Where You Can Get it Fresh!</div>
+              <h1>Bright calamansi for sips, sauces, and signature recipes.</h1>
+              <p class="lede">Our calamansi juice gives your kitchen the acidity, aroma, and consistency needed for house-made drinks, marinades, and elevated sauces.</p>
+              <div class="hero-actions">
+                <a href="products.html" class="btn btn-primary">See calamansi options</a>
+                <a href="contact.html" class="btn btn-outline btn-light">Talk to our team</a>
+              </div>
+            </div>
+            <div class="hero-product-card">
+              <img src="PICTURES/CALAMANSI.jpg" alt="Calamansi juice" aria-hidden="true">
+            </div>
+          </article>
+
+          <article class="carousel-slide hero-slide" style="background-image: linear-gradient(90deg, rgba(24, 30, 18, 0.72) 0%, rgba(24, 30, 18, 0.62) 34%, rgba(24, 30, 18, 0.12) 62%, rgba(24, 30, 18, 0.22) 100%), url('PICTURES/twist logo.jpg');">
+            <div class="hero-slide-content">
+              <div class="hero-eyebrow">Mango, calamansi &amp; iced tea, straight from the source</div>
+              <div class="hero-tagline">Where You Can Get it Fresh!</div>
+              <h1>Fruit your kitchen can build a menu around.</h1>
+              <p class="lede">We supply mango purée, calamansi juice, and concentrated calamansi iced tea to restaurants, hotels, and food manufacturers across the Philippines — packed for consistent results and delivered on schedule.</p>
+              <div class="hero-actions">
+                <a href="products.html" class="btn btn-primary">View our products</a>
+                <a href="contact.html" class="btn btn-outline btn-light">Talk to our team</a>
+              </div>
+            </div>
+            <div class="hero-product-card">
+              <img src="PICTURES/twist logo.jpg" alt="Twist product range" aria-hidden="true">
+            </div>
+          </article>
         </div>
-        <div class="carousel-dots" id="carouselDots" aria-hidden="true"></div>
       </div>
+
+      <button type="button" class="carousel-arrow carousel-next" aria-label="Next slide" aria-controls="productCarouselTrack">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
+    <div class="carousel-dots" id="carouselDots" aria-hidden="true"></div>
   </section>
 
   <!-- ============ PRODUCTS ============ -->
   <section id="products" class="section-band">
     <div class="wrap">
       <div class="section-head">
-        <h2>What we supply</h2>
-        <p>Five core products, each handled the way foodservice buyers actually need it — fresh, processed, or ready to pour.</p>
+        <h2>What We Offer</h2>
+        <p>Ready-to-use formats built for foodservice, beverage, and production kitchens.</p>
       </div>
       <div class="crate-grid">
         <div class="crate crate--mango">
-          <div class="crate-stamp">FM</div>
-          <h3>Fresh Mango</h3>
-          <p>Hand-picked and sorted by size and sweetness, packed in ventilated crates and delivered within 24 hours of harvest. Ripeness stage set to your order.</p>
-        </div>
-        <div class="crate crate--mango">
           <div class="crate-stamp">MP</div>
-          <h3>Mango Purée<br>(Pouch)</h3>
-          <p>Pulped and pasteurized the same day fruit arrives, packed in foodservice pouches for shakes, sauces, and desserts. Consistent Brix, batch to batch.</p>
-        </div>
-        <div class="crate crate--calamansi">
-          <div class="crate-stamp">FC</div>
-          <h3>Fresh Calamansi</h3>
-          <p>Small-fruited, thin-skinned calamansi sized for juicing or garnish. Available loose by the sack or pre-bagged to a fixed weight.</p>
+          <h3>Mango Purée</h3>
+          <p>1 kg &amp; 5 kg packs for juices, ice cream, desserts, sauces, and smoothies.</p>
         </div>
         <div class="crate crate--calamansi">
           <div class="crate-stamp">CJ</div>
-          <h3>Calamansi Juice<br>(Bottle/Pouch)</h3>
-          <p>Cold-pressed, unsweetened or lightly sweetened. Bottled or pouched from single-serve up to bulk foodservice volumes.</p>
+          <h3>Calamansi Juice</h3>
+          <p>1 kg &amp; 5 kg options for juice, marinades, and bottled beverage programs.</p>
         </div>
         <div class="crate crate--tea">
           <div class="crate-stamp">IT</div>
-          <h3>Iced Tea<br>Concentrate</h3>
-          <p>Brewed strong and bottled at a fixed dilution ratio, so every batch of iced tea pours the same whether it's a slow Tuesday or a full house.</p>
+          <h3>Concentrated Iced Tea</h3>
+          <p>1 kg powdered mix for easy preparation, ready-to-serve drinks, and consistent beverage scaling.</p>
         </div>
       </div>
       <p style="margin-top: 30px;"><a href="products.html" class="btn btn-outline">See full product specs</a></p>
@@ -125,21 +143,113 @@
   <section>
     <div class="wrap">
       <div class="section-head">
-        <h2>Why buyers stay with us</h2>
+        <h2>Why Choose Twist?</h2>
       </div>
       <div class="feature-list">
         <div class="feature">
-          <h3>Consistent supply</h3>
-          <p>Contracted growers across two provinces mean we can commit to volume, even outside peak mango season.</p>
+          <h3>Reliable sourcing</h3>
+          <p>We work with trusted growers to keep your supply stable, season after season.</p>
         </div>
         <div class="feature">
-          <h3>Quality checked, not assumed</h3>
-          <p>Every batch is graded, sampled, and tested for sweetness and acidity before it leaves our facility.</p>
+          <h3>Foodservice-ready quality</h3>
+          <p>Every batch is graded for taste, Brix, and consistency before it reaches your kitchen.</p>
         </div>
         <div class="feature">
-          <h3>Built for foodservice</h3>
-          <p>Pack sizes, delivery windows, and invoicing terms shaped around how restaurants and manufacturers actually order.</p>
+          <h3>Flexible pack sizes</h3>
+          <p>From 1 kg kitchen packs to larger formats, we match the way your business runs.</p>
         </div>
+        <div class="feature">
+          <h3>Freshness-first process</h3>
+          <p>We keep fruit moving quickly and process with care so your products stay vibrant and true to taste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What can you make with Twist?</h2>
+      </div>
+      <div class="application-grid">
+        <div class="application-card">
+          <span class="package-tag">Mango Purée</span>
+          <h3>Ice cream &amp; desserts</h3>
+          <ul>
+            <li>Milkshakes</li>
+            <li>Frozen desserts</li>
+            <li>Mango-based fillings</li>
+          </ul>
+        </div>
+        <div class="application-card">
+          <span class="package-tag">Mango Purée</span>
+          <h3>Juices &amp; drinks</h3>
+          <ul>
+            <li>Mango juice</li>
+            <li>Smoothies</li>
+            <li>Fruit blends</li>
+          </ul>
+        </div>
+        <div class="application-card">
+          <span class="package-tag">Calamansi Juice</span>
+          <h3>Kitchen applications</h3>
+          <ul>
+            <li>Marinades</li>
+            <li>Dressings</li>
+            <li>Calamansi juice</li>
+          </ul>
+        </div>
+        <div class="application-card">
+          <span class="package-tag">Powdered Iced Tea</span>
+          <h3>Beverage program</h3>
+          <ul>
+            <li>Easy-to-mix iced tea</li>
+            <li>Calamansi tea drinks</li>
+            <li>High-volume service</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head center">
+        <h2>Major Clients</h2>
+      </div>
+      <div class="client-grid">
+        <div class="client-card">
+          <img src="PICTURES/FRUITAS LOGO.jpg" alt="Fruitas logo">
+        </div>
+        <div class="client-card">
+          <img src="PICTURES/MCW LOGO.jpg" alt="MCW logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>FAQs</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>What products do you offer?</summary>
+          <p>We supply Mango Purée, Calamansi Juice, and Concentrated Iced Tea.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you offer small pack sizes?</summary>
+          <p>Yes. Mango Purée and Calamansi Juice are available in 1 kg and 5 kg packs. Concentrated Calamansi Iced Tea is available in a 1 kg pack.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I request a custom supply plan?</summary>
+          <p>Absolutely. We can align volume, delivery schedule, and pack sizes to how your business orders.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you serve businesses only?</summary>
+          <p>No. We also sell our products on <a href="https://s.lazada.com.ph/s.Z7be90?c=y" target="_blank" rel="noopener">Lazada</a>, where you can check out and place an order. You may also find the Lazada link in our Contact page.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -171,23 +281,15 @@
       <div class="review-grid">
         <figure class="review">
           <div class="review-photo"><img src="PICTURES/customer review 1.jpg" alt="Joy Delgado, Head Barista"></div>
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>"The purée changed both our shake program and our dessert line. Consistent Brix every single delivery — we don't re-calibrate recipes anymore."</blockquote>
         </figure>
         <figure class="review">
           <div class="review-photo"><img src="PICTURES/customer review 2.jpg" alt="Marco Reyes, F&amp;B Director"></div>
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>"We run two restaurants across Metro Manila and every order, the iced tea concentrate pours to the same color and taste. That reliability is why we stay."</blockquote>
         </figure>
         <figure class="review">
           <div class="review-photo"><img src="PICTURES/customer review 3.jpg" alt="Andrea Santos, Procurement Manager"></div>
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>"Fresh calamansi arrives in the ripeness stage we specify, packed well, and on the promised day even during peak season. Our production line has never stopped."</blockquote>
         </figure>
         <figure class="review">
           <div class="review-photo"><img src="PICTURES/customer review 4.jpg" alt="Liza Tan, Executive Chef"></div>
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>"We switched our hotel breakfast buffet to Twist calamansi juice and guests ask about it daily. Delivery is on time and the quality never wavers."</blockquote>
         </figure>
       </div>
     </div>
@@ -196,7 +298,7 @@
   <!-- ============ CTA ============ -->
   <section class="section-mango cta-band">
     <div class="wrap">
-      <h2>Ready to add mango and calamansi to your supply chain?</h2>
+      <h2>Need a trusted fruit and beverage supplier for your next production run?</h2>
       <a href="contact.html" class="btn btn-on-dark">Get a quote</a>
     </div>
   </section>
@@ -211,7 +313,7 @@
           <img src="PICTURES/twist-logo.jpg" alt="Twist logo">
           <span>Twist Puree</span>
         </div>
-        <p style="max-width: 34ch; opacity: 0.85;">Mango, calamansi, and iced tea concentrate, supplied direct from Philippine orchards to restaurants, hotels, and manufacturers.</p>
+        <p style="max-width: 34ch; opacity: 0.85;">Mango purée, calamansi juice, and concentrated iced tea for restaurants, hotels, and manufacturers.</p>
       </div>
       <div>
         <h4>SITE</h4>
@@ -227,7 +329,7 @@
         <ul>
           <li><a href="mailto:mangofrescoph@gmail.com">mangofrescoph@gmail.com</a></li>
           <li><a href="tel:+639271506339">+63 927 150 6339</a></li>
-          <li><a href="https://www.facebook.com/mangofrescoph/" target="_blank" rel="noopener">Messenger</a></li>
+          <li><a href="https://www.facebook.com/mangofrescoph/" target="_blank" rel="noopener">Mango Puree PH</a></li>
         </ul>
       </div>
     </div>
@@ -237,6 +339,13 @@
     </div>
   </div>
 </footer>
+
+<a class="messenger-float" href="https://www.facebook.com/mangofrescoph/" target="_blank" rel="noopener" aria-label="Chat on Messenger">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 3.5C7.6 3.5 4 6.9 4 11c0 2.3 1.1 4.3 2.8 5.7L6 20.5l3.4-1.8a8 8 0 0 0 2.6.4c4.4 0 8-3.4 8-7.5S16.4 3.5 12 3.5z"/>
+    <path d="M8.8 11.5l2.6 2.8 4.8-5.1"/>
+  </svg>
+</a>
 
 <script src="script.js"></script>
 </body>

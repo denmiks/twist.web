@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function update() {
       var per = perView();
       carousel.setAttribute("data-per-view", per);
-      var item = slides.querySelector(".carousel-item");
+      var item = slides.querySelector(".carousel-slide");
       var step = item ? item.getBoundingClientRect().width : 0;
       var maxIndex = slides.children.length - per;
       if (index > maxIndex) index = maxIndex;
