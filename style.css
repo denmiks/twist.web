@@ -153,7 +153,11 @@ p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
   font-family: var(--font-display);
   font-size: 1.55rem;
   text-decoration: none;
-  color: var(--cream);
+  color: var(--mango);
+  background: linear-gradient(to top, var(--mango) 0%, #ffd98a 62%, var(--cream) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: flex;
   align-items: center;
   gap: 12px;
