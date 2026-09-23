@@ -106,22 +106,29 @@ p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 26px;
+  padding: 14px 28px;
   border-radius: 3px;
   font-family: var(--font-button);
   font-weight: 500;
-  font-size: 0.96rem;
+  font-size: 1.02rem;
   text-decoration: none;
   border: 1.5px solid transparent;
   cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   margin-top: 18px;
 }
+.btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
 .btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
 .btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
 
 .btn-primary { background: var(--mango); color: var(--white); }
-.btn-primary:hover { background: var(--mango-dark); }
+.btn-primary:hover { background: #d78c00; color: #fffaf0; }
+.btn-primary:active { background: #b77200; color: #fffaf0; }
 
 .btn-outline { background: transparent; color: var(--grove-deep); border-color: var(--grove-deep); }
 .btn-outline:hover { background: var(--grove-deep); color: var(--cream); }
@@ -306,7 +313,7 @@ p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
   justify-content: flex-start;
   padding: 46px 62px 46px 54px;
   background-color: var(--grove-deep);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   overflow: hidden;
