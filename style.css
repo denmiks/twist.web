@@ -300,15 +300,15 @@ p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 1.5s ease, transform 1.5s ease;
-  transform: scale(1.02);
+  transition: opacity 1.5s ease;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 46px 62px 46px 54px;
   background-color: var(--grove-deep);
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
   overflow: hidden;
   border-radius: 0;
 }
@@ -317,7 +317,6 @@ p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: scale(1);
 }
 
 .hero-slide::after {
