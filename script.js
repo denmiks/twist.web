@@ -27,9 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var next = carousel.querySelector(".carousel-next");
     var dots = [];
     var slideCount = slides.children.length;
-    var index = slideCount - 1;
-
-    slides.appendChild(slides.children[0].cloneNode(true));
+    var index = 0;
 
     for (var d = 0; d < slideCount; d++) {
       var dot = document.createElement("button");
@@ -42,42 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
       dots.push(dot);
     }
 
-    function perView() {
-      return 1;
-    }
+    function update() {
+      for (var i = 0; i < slides.children.length; i++) {
+        slides.children[i].classList.toggle("active", i === index);
+      }
 
-    function update(resetTransition) {
-      var per = perView();
-      carousel.setAttribute("data-per-view", per);
-      var item = slides.querySelector(".carousel-slide");
-      var step = item ? item.getBoundingClientRect().width : 0;
-      var maxIndex = slideCount;
-      if (index > maxIndex) index = maxIndex;
-      if (index < 0) index = slideCount - 1;
-      if (resetTransition) slides.style.transition = "none";
-      slides.style.transform = "translateX(-" + index * step + "px)";
-      if (resetTransition) {
-        slides.offsetWidth;
-        slides.style.transition = "";
+      for (var j = 0; j < dots.length; j++) {
+        dots[j].classList.toggle("active", j === index);
       }
-      for (var i = 0; i < dots.length; i++) {
-        dots[i].classList.toggle("active", i === index % slideCount);
-      }
-      return maxIndex;
     }
-
-    slides.addEventListener("transitionend", function () {
-      if (index === slideCount) {
-        index = 0;
-        update(true);
-      }
-    });
 
     var timer;
     function play() {
       stop();
       timer = setInterval(function () {
-        index++;
+        index = (index + 1) % slideCount;
         update();
       }, 4000);
     }
@@ -89,12 +66,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     prev.addEventListener("click", function () {
-      index--;
+      index = (index - 1 + slideCount) % slideCount;
       update();
       play();
     });
     next.addEventListener("click", function () {
-      index++;
+      index = (index + 1) % slideCount;
       update();
       play();
     });
