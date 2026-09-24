@@ -869,8 +869,6 @@ section { padding: 74px 0; }
     width: 40px;
     height: 40px;
   }
-  .showcase-visual::before { top: 14px; left: 18px; }
-  .showcase-visual::after { bottom: 14px; right: 18px; }
 }
 
 .showcase-copy {
@@ -904,14 +902,14 @@ section { padding: 74px 0; }
   border-color: var(--mango);
 }
 .showcase-visual::before {
-  top: 22px;
-  left: 26px;
+  top: var(--corner-top, 22px);
+  left: var(--corner-left, 26px);
   border-right: none;
   border-bottom: none;
 }
 .showcase-visual::after {
-  bottom: 22px;
-  right: 26px;
+  right: var(--corner-right, 26px);
+  bottom: var(--corner-bottom, 22px);
   border-left: none;
   border-top: none;
 }
