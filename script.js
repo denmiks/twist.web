@@ -19,9 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  var heroLinks = document.querySelectorAll(".hero-actions a");
-  for (var i = 0; i < heroLinks.length; i++) {
-    heroLinks[i].addEventListener("click", function (event) {
+  var heroButtons = document.querySelectorAll(".hero-actions a");
+  for (var i = 0; i < heroButtons.length; i++) {
+    heroButtons[i].addEventListener("click", function (event) {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       window.location.href = this.getAttribute("href");
     });
@@ -102,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     carousel.addEventListener("pointerdown", function (event) {
       if (event.pointerType === "mouse" && event.button !== 0) return;
+      if (event.target.closest && event.target.closest("a, button")) return;
       isDragging = true;
       dragStartX = event.clientX;
       dragCurrentX = event.clientX;
