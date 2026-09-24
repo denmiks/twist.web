@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  var heroLinks = document.querySelectorAll(".hero-actions a");
+  for (var i = 0; i < heroLinks.length; i++) {
+    heroLinks[i].addEventListener("click", function (event) {
+      event.preventDefault();
+      window.location.href = this.getAttribute("href");
+    });
+  }
+
   var carousel = document.getElementById("productCarousel");
   if (carousel) {
     var slides = document.getElementById("productCarouselSlides");
