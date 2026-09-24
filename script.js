@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var dots = [];
     var slideCount = slides.children.length;
     var index = 0;
+    var dragStartX = 0;
+    var dragCurrentX = 0;
+    var isDragging = false;
 
     for (var d = 0; d < slideCount; d++) {
       var dot = document.createElement("button");
@@ -50,6 +53,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
+    function goToNext() {
+      index = (index + 1) % slideCount;
+      update();
+      play();
+    }
+
+    function goToPrevious() {
+      index = (index - 1 + slideCount) % slideCount;
+      update();
+      play();
+    }
+
     var timer;
     function play() {
       stop();
@@ -65,16 +80,55 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    prev.addEventListener("click", function () {
-      index = (index - 1 + slideCount) % slideCount;
-      update();
+    if (prev) {
+      prev.addEventListener("click", function () {
+        goToPrevious();
+      });
+    }
+
+    if (next) {
+      next.addEventListener("click", function () {
+        goToNext();
+      });
+    }
+
+    carousel.addEventListener("pointerdown", function (event) {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      isDragging = true;
+      dragStartX = event.clientX;
+      dragCurrentX = event.clientX;
+      stop();
+      if (carousel.setPointerCapture) {
+        carousel.setPointerCapture(event.pointerId);
+      }
+    });
+
+    carousel.addEventListener("pointermove", function (event) {
+      if (!isDragging) return;
+      dragCurrentX = event.clientX;
+    });
+
+    carousel.addEventListener("pointerup", function () {
+      if (!isDragging) return;
+      var delta = dragCurrentX - dragStartX;
+      if (Math.abs(delta) > 55) {
+        if (delta < 0) {
+          goToNext();
+        } else {
+          goToPrevious();
+        }
+      } else {
+        play();
+      }
+      isDragging = false;
+    });
+
+    carousel.addEventListener("pointerleave", function () {
+      if (!isDragging) return;
+      isDragging = false;
       play();
     });
-    next.addEventListener("click", function () {
-      index = (index + 1) % slideCount;
-      update();
-      play();
-    });
+
     carousel.addEventListener("mouseenter", stop);
     carousel.addEventListener("mouseleave", play);
     window.addEventListener("resize", function () {
