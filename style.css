@@ -336,13 +336,14 @@ p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  z-index: 2;
 }
 
 .hero-slide-content,
 .hero-actions,
 .hero-actions a {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   pointer-events: auto;
 }
 
