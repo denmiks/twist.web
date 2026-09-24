@@ -28,32 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function positionShowcaseBrackets() {
-    var visuals = document.querySelectorAll(".showcase-visual");
-    for (var i = 0; i < visuals.length; i++) {
-      var img = visuals[i].querySelector(".showcase-image");
-      if (!img || !img.getBoundingClientRect) continue;
-      var vRect = visuals[i].getBoundingClientRect();
-      var iRect = img.getBoundingClientRect();
-      visuals[i].style.setProperty("--corner-top", Math.round(iRect.top - vRect.top) + "px");
-      visuals[i].style.setProperty("--corner-left", Math.round(iRect.left - vRect.left) + "px");
-      visuals[i].style.setProperty("--corner-right", Math.round(vRect.right - iRect.right) + "px");
-      visuals[i].style.setProperty("--corner-bottom", Math.round(vRect.bottom - iRect.bottom) + "px");
-    }
-  }
-
-  var showcaseImages = document.querySelectorAll(".showcase-image");
-  if (showcaseImages.length) {
-    positionShowcaseBrackets();
-    window.addEventListener("load", positionShowcaseBrackets);
-    window.addEventListener("resize", positionShowcaseBrackets);
-    for (var s = 0; s < showcaseImages.length; s++) {
-      (function (image) {
-        image.addEventListener("load", positionShowcaseBrackets);
-      })(showcaseImages[s]);
-    }
-  }
-
   var carousel = document.getElementById("productCarousel");
   if (carousel) {
     var slides = document.getElementById("productCarouselSlides");
