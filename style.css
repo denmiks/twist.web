@@ -321,12 +321,16 @@ p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
   justify-content: flex-start;
   padding: 46px 62px 46px 54px;
   background-color: var(--grove-deep);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   overflow: hidden;
   border-radius: 0;
 }
+
+.hero-slide--mango { background-position: center 42%; }
+.hero-slide--calamansi { background-position: center 30%; }
+.hero-slide--tea { background-position: center 35%; }
 
 .hero-slide.active {
   opacity: 1;
