@@ -338,6 +338,14 @@ p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
   pointer-events: auto;
 }
 
+.hero-slide-content,
+.hero-actions,
+.hero-actions a {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
 .hero-slide::after {
   content: "";
   position: absolute;
