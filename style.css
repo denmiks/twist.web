@@ -126,9 +126,13 @@ p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 52ch; }
 .btn:active { transform: translateY(0); }
 .btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
 
-.btn-primary { background: var(--mango); color: var(--white); }
+.btn-primary { background: var(--mango); color: var(--white); box-shadow: 0 10px 18px rgba(206, 127, 22, 0.18); border-color: rgba(206, 127, 22, 0.25); }
 .btn-primary:hover { background: #d78c00; color: #fffaf0; }
 .btn-primary:active { background: #b77200; color: #fffaf0; }
+.btn-primary svg { color: inherit; }
+.showcase-row--mango .btn-primary { background: var(--mango); color: var(--white); }
+.showcase-row--calamansi .btn-primary { background: var(--calamansi); color: var(--white); }
+.showcase-row--tea .btn-primary { background: var(--tea); color: var(--white); }
 
 .btn-outline { background: transparent; color: var(--grove-deep); border-color: var(--grove-deep); }
 .btn-outline:hover { background: var(--grove-deep); color: var(--cream); }
@@ -766,40 +770,52 @@ section { padding: 74px 0; }
 
 .showcase-row {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 56px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
   align-items: center;
-  padding: 64px 0;
-  border-top: 1px solid var(--line);
+  padding: 30px 0;
+  border: none;
 }
-.showcase-row:last-child { border-bottom: 1px solid var(--line); }
+.showcase-row:last-child { border-bottom: none; }
 .showcase-row.reverse .showcase-visual { order: 2; }
 .showcase-row.reverse .showcase-copy { order: 1; }
 
 @media (max-width: 780px) {
   .showcase-row, .showcase-row.reverse {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
   .showcase-row.reverse .showcase-visual,
   .showcase-row.reverse .showcase-copy { order: initial; }
 }
 
+.showcase-copy {
+  position: relative;
+  padding-left: 22px;
+}
+.showcase-row--mango .showcase-copy { border-left: 5px solid var(--mango); }
+.showcase-row--calamansi .showcase-copy { border-left: 5px solid var(--calamansi); }
+.showcase-row--tea .showcase-copy { border-left: 5px solid var(--tea); }
+
 .showcase-visual {
-  background: var(--white);
-  border-radius: 4px;
-  padding: 30px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 420px;
 }
 .showcase-visual svg { max-height: 220px; }
 .showcase-image {
   display: block;
+  width: 100%;
   max-width: 100%;
-  max-height: 260px;
-  width: auto;
+  max-height: 520px;
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 18px 30px rgba(43, 35, 24, 0.08));
 }
 
 .showcase-tag {
