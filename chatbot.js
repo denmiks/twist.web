@@ -302,7 +302,7 @@
     var foot = el("div", "chat-foot");
     foot.innerHTML =
       '<span>Automated assistant</span><span aria-hidden="true">&bull;</span>' +
-      '<a href="/contact">Contact a human</a>';
+      '<a href="contact.html">Contact a human</a>';
 
     panel.appendChild(head);
     panel.appendChild(langBar);
