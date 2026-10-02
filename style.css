@@ -1100,26 +1100,40 @@ section { padding: 74px 0; }
 @media (max-width: 860px) { .review-grid { grid-template-columns: 1fr; } }
 
 .review {
-  background: var(--white);
-  border-top: 5px solid var(--yellow);
-  padding: 0 26px 24px;
+  background: none;
+  border: none;
+  padding: 0;
   margin: 0;
-  box-shadow: 0 1px 0 var(--line);
+  box-shadow: none;
   display: flex;
   flex-direction: column;
 }
 
 .review-photo {
-  margin: 0 -26px 22px;
-  height: 200px;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
+  margin: 0;
+  height: auto;
+  overflow: visible;
+  border-bottom: none;
 }
 .review-photo img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
+
+.review-rule {
+  display: grid;
+  gap: 6px;
+  margin-top: 18px;
+}
+.review-rule span {
+  display: block;
+  height: 5px;
+}
+.review-rule span:nth-child(1) { background: var(--mango); width: 100%; }
+.review-rule span:nth-child(2) { background: var(--calamansi); width: 72%; }
+.review-rule span:nth-child(3) { background: var(--tea); width: 44%; }
 
 .review-stars {
   color: var(--mango);
