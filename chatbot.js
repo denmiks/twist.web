@@ -215,7 +215,7 @@
     }
   } catch (e) {}
 
-  var launcher, panel, log, chips, input, openBtn, widget;
+  var launcher, panel, log, chips, input, openBtn, widget, langBar;
 
   function el(tag, className, html) {
     var node = document.createElement(tag);
@@ -265,6 +265,22 @@
     log.setAttribute("role", "log");
     log.setAttribute("aria-live", "polite");
 
+    /* Always-visible language buttons */
+    langBar = el("div", "chat-langbar");
+    langBar.setAttribute("role", "group");
+    langBar.setAttribute("aria-label", "Chat language");
+    [["en", "English"], ["tl", "Tagalog"]].forEach(function (pair) {
+      var btn = el("button", "chat-lang-btn", pair[1]);
+      btn.type = "button";
+      btn.setAttribute("data-lang", pair[0]);
+      btn.setAttribute("aria-pressed", pair[0] === state.lang ? "true" : "false");
+      btn.addEventListener("click", function () {
+        if (state.stage === "language") switchLanguage(pair[0], false);
+        else if (state.lang !== pair[0]) switchLanguage(pair[0], true);
+      });
+      langBar.appendChild(btn);
+    });
+
     chips = el("div", "chat-chips");
 
     var form = el("form", "chat-form");
@@ -286,9 +302,10 @@
     var foot = el("div", "chat-foot");
     foot.innerHTML =
       '<span>Automated assistant</span><span aria-hidden="true">&bull;</span>' +
-      '<a href="contact.html">Contact a human</a>';
+      '<a href="/contact">Contact a human</a>';
 
     panel.appendChild(head);
+    panel.appendChild(langBar);
     panel.appendChild(log);
     panel.appendChild(chips);
     panel.appendChild(form);
@@ -315,6 +332,7 @@
     widget.classList.add("chat-widget--open");
     launcher.classList.add("is-open");
     launcher.setAttribute("aria-expanded", "true");
+    syncLangButtons();
     if (!log.childNodes.length) greet();
     if (window.matchMedia && window.matchMedia("(hover: hover)").matches) input.focus();
   }
@@ -385,16 +403,9 @@
     var c = BOT.copy[state.lang];
     var labels = c.fallbackChips;
     var values = ["products", "pricing", "packs", "ordering", "delivery", "contact"];
-    var chipsOut = values.map(function (value, index) {
+    return values.map(function (value, index) {
       return { label: labels[index], value: value };
     });
-    chipsOut.push({
-      label: state.lang === "en" ? "Tagalog" : "English",
-      onClick: function () {
-        switchLanguage(state.lang === "en" ? "tl" : "en", true);
-      }
-    });
-    return chipsOut;
   }
 
   function greet() {
@@ -410,9 +421,20 @@
     setChips(topicChips());
   }
 
+  function syncLangButtons() {
+    if (!langBar) return;
+    var buttons = langBar.querySelectorAll(".chat-lang-btn");
+    for (var i = 0; i < buttons.length; i++) {
+      var active = buttons[i].getAttribute("data-lang") === state.lang;
+      buttons[i].classList.toggle("is-active", active);
+      buttons[i].setAttribute("aria-pressed", active ? "true" : "false");
+    }
+  }
+
   function switchLanguage(lang, announce) {
     state.lang = lang;
     state.stage = "main";
+    syncLangButtons();
     try {
       window.localStorage.setItem(STORE_KEY, lang);
     } catch (e) {}

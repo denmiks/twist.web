@@ -134,6 +134,8 @@ a { color: inherit; }
 }
 .chat-widget--open .chat-badge { display: none; }
 
+.chat-panel[hidden] { display: none; }
+
 .chat-panel {
   width: 358px;
   max-width: calc(100vw - 32px);
@@ -202,6 +204,35 @@ a { color: inherit; }
   flex-direction: column;
   gap: 10px;
 }
+
+.chat-langbar {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--sun-light);
+  border-bottom: 1px solid var(--line);
+}
+.chat-lang-btn {
+  flex: 1;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--grove-deep);
+  font-family: var(--font-button);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.chat-lang-btn:hover { border-color: var(--mango-dark); }
+.chat-lang-btn.is-active {
+  background: var(--mango);
+  border-color: var(--mango-dark);
+  color: var(--white);
+}
+.chat-lang-btn:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
 
 .chat-msg {
   max-width: 88%;
