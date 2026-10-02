@@ -318,9 +318,6 @@
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && isOpen()) close();
     });
-    document.addEventListener("click", function (event) {
-      if (isOpen() && !wrap.contains(event.target)) close();
-    });
   }
 
   function isOpen() {
